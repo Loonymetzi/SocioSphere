@@ -13,7 +13,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { Textarea, toast, useToast } from "../ui"
+import { Textarea, useToast } from "../ui"
 import FileUploader from "../shared/FileUploader"
 import { PostValidation } from "@/lib/validation"
 import { Models } from "appwrite"
@@ -27,9 +27,9 @@ type PostFormProps = {
 
 const PostForm = ({post , action}: PostFormProps) => {
 
-    const { mutateAsync: createPost, isLoading: isLoadingCreate } =
+    const { mutateAsync: createPost, isPending: isLoadingCreate } =
     useCreatePost();
-    const { mutateAsync: updatePost, isLoading: isLoadingUpdate } =
+    const { mutateAsync: updatePost, isPending: isLoadingUpdate } =
     useUpdatePost();
 
     const {user} =useUserContext();

@@ -24,7 +24,7 @@ import {
   signOutAccount,
   updatePost,
 } from "@/lib/appwrite/api";
-import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
+import { INewPost, INewUser, IUpdatePost } from "@/types";
 
 
 export const useCreateUserAccount = () => {
@@ -183,6 +183,7 @@ export const useGetPosts = () => {
       const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
       return lastId;
     },
+    initialPageParam: null, // Provide initialPageParam here
   });
 };
 
